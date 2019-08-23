@@ -38,6 +38,8 @@ int main (int argc, char** argv)
   for (size_t i = 0; i < cloud_out->points.size (); ++i)
     std::cout << "    " << cloud_out->points[i].x << " " <<
       cloud_out->points[i].y << " " << cloud_out->points[i].z << std::endl;
+  
+  //Applying ICP
   pcl::IterativeClosestPoint<pcl::PointXYZRGB, pcl::PointXYZRGB> icp;
   icp.setInputSource(cloud_in);
   icp.setInputTarget(cloud_out);

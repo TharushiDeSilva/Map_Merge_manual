@@ -12,7 +12,7 @@
 
 void voxel_callback(const sensor_msgs::PointCloud2::ConstPtr& msg){
     sensor_msgs::PointCloud2 ros_pointcloud_msg = *msg; 
-    ROS_INFO("Height of the cloud: [%d]", ros_pointcloud_msg.height);
+    //ROS_INFO("Height of the cloud: [%d]", ros_pointcloud_msg.height);
 
     //Convert into pcl format 
     pcl::PCLPointCloud2 pcl_cloud2; 
@@ -27,9 +27,12 @@ void voxel_callback(const sensor_msgs::PointCloud2::ConstPtr& msg){
         std::cout << i <<"  " <<
       pcl_cloud->points[i].x << " " << pcl_cloud->points[i].y << " " <<
       pcl_cloud->points[i].z << " ";
+      /* 
+      // rgb values are tested to be there. cannot print them. maybe a different data type
       if (pcl_cloud->points[i].r ==255){
           std::cout<<"255"<<std::endl; 
-      }else {std::cout<<"Other"<<std::endl;}
+      }else {std::cout<<"Other"<<std::endl;} 
+      */
     }
 }
 
